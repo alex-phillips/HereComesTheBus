@@ -1,0 +1,85 @@
+[
+  {
+    "id": "f655f22b640b52e8",
+    "type": "http in",
+    "z": "815dd7af.2fb34",
+    "name": "Here Comes The Bus",
+    "url": "/herecomesthebus",
+    "method": "post",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 850,
+    "y": 300,
+    "wires": [
+      [
+        "58e60881e60db744",
+        "8f9ed4233bb55030"
+      ]
+    ]
+  },
+  {
+    "id": "58e60881e60db744",
+    "type": "debug",
+    "z": "815dd7af.2fb34",
+    "name": "HCTB Debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload.loc",
+    "targetType": "jsonata",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1040,
+    "y": 300,
+    "wires": []
+  },
+  {
+    "id": "8f9ed4233bb55030",
+    "type": "api-call-service",
+    "z": "815dd7af.2fb34",
+    "name": "",
+    "server": "ce932edc.ea08c",
+    "version": 5,
+    "debugenabled": false,
+    "domain": "device_tracker",
+    "service": "see",
+    "areaId": [],
+    "deviceId": [],
+    "entityId": [],
+    "data": "{    \"dev_id\": \"school_bus\",    \"gps\": payload.loc}",
+    "dataType": "jsonata",
+    "mergeContext": "",
+    "mustacheAltTags": false,
+    "outputProperties": [],
+    "queue": "none",
+    "x": 1070,
+    "y": 360,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "ce932edc.ea08c",
+    "type": "server",
+    "name": "Home Assistant",
+    "version": 5,
+    "addon": false,
+    "rejectUnauthorizedCerts": true,
+    "ha_boolean": "y|yes|true|on|home|open",
+    "connectionDelay": true,
+    "cacheJson": true,
+    "heartbeat": false,
+    "heartbeatInterval": "30",
+    "areaSelector": "friendlyName",
+    "deviceSelector": "friendlyName",
+    "entitySelector": "friendlyName",
+    "statusSeparator": "at: ",
+    "statusYear": "hidden",
+    "statusMonth": "short",
+    "statusDay": "numeric",
+    "statusHourCycle": "h23",
+    "statusTimeFormat": "h:m",
+    "enableGlobalContextStore": true
+  }
+]
