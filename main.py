@@ -48,8 +48,8 @@ else:
 
     response = session.submit_selected()
 
-with open(cookies_file, 'w') as fh:
-    fh.write(json.dumps(session.session.cookies.get_dict()))
+#with open(cookies_file, 'w') as fh:
+#    fh.write(json.dumps(session.session.cookies.get_dict()))
 
 passenger_id = session.page.find('div', id='pickPassenger').find('option')['value']
 passenger_name = session.page.find('div', id='pickPassenger').find('option').text
